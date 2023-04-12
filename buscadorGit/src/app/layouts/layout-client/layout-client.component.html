@@ -1,3 +1,13 @@
-<p>layout-client works!</p>
+<header>
+  <img src="../../../assets/imgs/Logotype.svg" alt="Logo" />
 
-<router-outlet></router-outlet>
+  <app-search (outputData)="getSearchData($event)"></app-search>
+</header>
+
+<body>
+  <router-outlet></router-outlet>
+</body>
+
+<footer>
+  <p>Projetado por: Fulano de Tal - 31/12/2020</p>
+</footer>

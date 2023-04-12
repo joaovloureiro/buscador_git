@@ -1,0 +1,47 @@
+$header-height: 67.5px;
+$footer-height: 32px;
+
+header {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  height: $header-height;
+
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  box-shadow: 0px 0px 2px rgba(145, 158, 171, 0.1),
+    0px 8px 12px -4px rgba(145, 158, 171, 0.2);
+
+  img {
+    height: 2.25rem;
+    width: auto;
+    margin-right: 2rem;
+  }
+
+  app-search {
+    width: 100%;
+  }
+}
+
+body {
+  height: calc(100% - (/* $header-height +  */ $footer-height));
+}
+
+footer {
+  height: $footer-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px -4px 4px rgba(47, 37, 68, 0.15);
+
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #7b6490;
+  }
+}

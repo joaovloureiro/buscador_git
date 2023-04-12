@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-layout-client',
   templateUrl: './layout-client.component.html',
-  styleUrls: ['./layout-client.component.scss']
+  styleUrls: ['./layout-client.component.scss'],
 })
-export class LayoutClientComponent {
+export class LayoutClientComponent implements OnInit {
+  constructor() {}
 
+  ngOnInit(): void {}
+
+  getSearchData(data: string) {
+    console.log(data);
+  }
 }
