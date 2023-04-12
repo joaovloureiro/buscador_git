@@ -2,11 +2,16 @@ header {
   background-color: #fff;
   box-shadow: 0px 4px 4px rgba(47, 37, 68, 0.15);
   display: flex;
+  align-items: center;
   padding: 1rem 2.5rem;
 
   img {
     height: 2.25rem;
     width: auto;
     margin-right: 2rem;
+  }
+
+  app-search {
+    width: 100%;
   }
 }

@@ -1,0 +1,7 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="text" placeholder="Pesquisar" />
+
+  <button type="button" (click)="onSubmit()">
+    <img src="../../../assets/imgs/Magnifier.svg" alt="" />
+  </button>
+</form>
