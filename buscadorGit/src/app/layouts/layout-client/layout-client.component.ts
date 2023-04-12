@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GitService } from 'src/app/services/api/git.service';
 
 @Component({
   selector: 'app-layout-client',
@@ -6,11 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./layout-client.component.scss'],
 })
 export class LayoutClientComponent implements OnInit {
-  constructor() {}
+  constructor(private apiGit: GitService) {}
 
   ngOnInit(): void {}
 
-  getSearchData(data: string) {
-    console.log(data);
-  }
+  getSearchData(data: string) {}
 }
