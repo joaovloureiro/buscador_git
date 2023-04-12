@@ -27,8 +27,9 @@ header {
   }
 }
 
-body {
-  height: calc(100% - (/* $header-height +  */ $footer-height));
+main {
+  margin-top: $header-height;
+  height: calc(100% - ($footer-height + $header-height));
 }
 
 footer {
