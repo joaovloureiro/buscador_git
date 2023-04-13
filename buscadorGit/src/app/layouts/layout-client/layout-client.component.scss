@@ -9,10 +9,13 @@ header {
   height: $header-height;
 
   z-index: 5;
-  position: fixed;
+  // position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  position: absolute;
+
+  position: static;
   box-shadow: 0px 0px 2px rgba(145, 158, 171, 0.1),
     0px 8px 12px -4px rgba(145, 158, 171, 0.2);
 
@@ -28,7 +31,8 @@ header {
 }
 
 main {
-  margin-top: $header-height;
+  // margin-top: $header-height;
+  // height: calc(100% - ($footer-height + $header-height));
   height: calc(100% - ($footer-height + $header-height));
 }
 
