@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GitService } from 'src/app/services/api/git.service';
 import { SearchDataService } from 'src/app/services/tools/search-data.service';
+import { UserProps } from 'src/app/types/user.type';
 
 @Component({
   selector: 'app-layout-client',
@@ -8,7 +9,7 @@ import { SearchDataService } from 'src/app/services/tools/search-data.service';
   styleUrls: ['./layout-client.component.scss'],
 })
 export class LayoutClientComponent implements OnInit {
-  usersList: any;
+  usersList: UserProps[] = [];
 
   constructor(
     private apiGit: GitService,
@@ -30,6 +31,7 @@ export class LayoutClientComponent implements OnInit {
   getUsers(data: any) {
     this.apiGit.getUsers(data).subscribe((resp: any) => {
       console.log(resp);
+      this.usersList = (resp as { items: UserProps[] })?.items;
     });
   }
 }
