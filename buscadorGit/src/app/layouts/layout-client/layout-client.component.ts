@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GitService } from 'src/app/services/api/git.service';
+import { UserProps } from 'src/app/types/user.type';
 
 @Component({
   selector: 'app-layout-client',
@@ -7,9 +7,9 @@ import { GitService } from 'src/app/services/api/git.service';
   styleUrls: ['./layout-client.component.scss'],
 })
 export class LayoutClientComponent implements OnInit {
-  constructor(private apiGit: GitService) {}
+  usersList: UserProps[] = [];
+
+  constructor() {}
 
   ngOnInit(): void {}
-
-  getSearchData(data: string) {}
 }

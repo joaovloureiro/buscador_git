@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { SearchDataService } from 'src/app/services/tools/search-data.service';
 
 @Component({
   selector: 'app-search',
@@ -11,7 +12,7 @@ export class SearchComponent implements OnInit {
 
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private searchData: SearchDataService) {}
 
   ngOnInit(): void {
     this.createForm();
@@ -24,6 +25,6 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit() {
-    this.outputData.emit(this.form.get('text')?.value);
+    this.searchData.setSearchData(this.form.get('text')?.value);
   }
 }

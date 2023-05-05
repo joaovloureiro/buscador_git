@@ -10,10 +10,11 @@ export class GitService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getUsers(users: string) {
+  getUsers(page: number = 1, users: string) {
     let params = new HttpParams();
 
     params = params.append('q', users);
+    params = params.append('page', page);
 
     const endpoint = `${this.apiUrl}/search/users`;
 
