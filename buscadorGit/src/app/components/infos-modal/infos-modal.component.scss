@@ -1,0 +1,47 @@
+.card-container {
+  display: flex;
+  padding: 20px;
+
+  img {
+    border-radius: 10px;
+    height: 266px;
+    width: auto;
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2f2544;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    color: #2f2544;
+
+    span {
+      color: #7b6490;
+    }
+  }
+
+  .infos {
+    margin-left: 20px;
+
+    .line {
+      border-bottom: 1px solid #e1dfe0;
+      width: 100%;
+      margin: 10px 0 20px;
+    }
+
+    .row {
+      &:not(:last-child) {
+        margin-bottom: 1.25rem;
+      }
+
+      .col-6:last-child {
+        text-align: right;
+      }
+    }
+  }
+}

@@ -22,7 +22,7 @@ export class GitService {
   }
 
   getUser(user: string) {
-    const endpoint = `${this.apiUrl}/user/${user}`;
+    const endpoint = `${this.apiUrl}/users/${user}`;
 
     return this.httpClient.get(endpoint);
   }
