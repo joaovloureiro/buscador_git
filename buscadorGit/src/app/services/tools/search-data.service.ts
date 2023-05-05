@@ -15,7 +15,7 @@ export class SearchDataService {
 
     if (text === '') {
       this.router.navigate(['/home']);
-    } else {
+    } else if (this.router.url === '/home' && text !== '') {
       this.router.navigate(['/search']);
     }
   }

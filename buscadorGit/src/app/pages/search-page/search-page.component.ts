@@ -33,20 +33,14 @@ export class SearchPageComponent implements OnInit {
   }
 
   getParams() {
-    this.unsubscribeQueryParams = this.activatedRoute.queryParams.subscribe(
-      (params) => {
-        if (params && params['page']) {
-          this.pageIndex = params['page'];
-          console.log(params['page']);
-        }
-        if (params && params['q']) {
-          this.searchData.setSearchData(params['q']);
-          console.log(params['q']);
-        }
+    this.activatedRoute.queryParams.subscribe((params) => {
+      if (params && params?.['page']) {
+        this.pageIndex = params?.['page'];
       }
-    );
-
-    // if (this.search) this.unsubscribeQueryParams.unsubscribe();
+      if (params && params?.['q']) {
+        this.searchData.setSearchData(params?.['q']);
+      }
+    });
   }
 
   getSearchData() {
@@ -82,8 +76,6 @@ export class SearchPageComponent implements OnInit {
       queryParams: data,
       queryParamsHandling: 'merge',
     });
-
-    console.log(urlTree);
 
     this.location.go(urlTree.toString());
   }
