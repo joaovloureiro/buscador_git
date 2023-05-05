@@ -61,11 +61,8 @@ export class SearchPageComponent implements OnInit {
             avatar: user.avatar_url,
             name: user?.login || 'Usuário',
             score: user?.score,
-            url: user?.url,
           };
         });
-
-        console.log(this.users);
       }
     });
   }

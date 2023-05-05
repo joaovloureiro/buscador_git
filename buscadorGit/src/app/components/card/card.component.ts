@@ -4,7 +4,6 @@ export interface CardProps {
   avatar: string;
   name?: string;
   score: number;
-  url: string;
 }
 
 @Component({
