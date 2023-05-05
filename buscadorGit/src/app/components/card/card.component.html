@@ -1,0 +1,15 @@
+<div class="user-card">
+  <img [src]="user.avatar" [alt]="user.name" />
+
+  <div class="text">
+    <div class="infos">
+      <h3>{{ user.name }}</h3>
+
+      <a [href]="user.url" target="_blank">{{ user.url }}</a>
+
+      <h6>{{ user.score }}</h6>
+    </div>
+
+    <button>VER MAIS</button>
+  </div>
+</div>

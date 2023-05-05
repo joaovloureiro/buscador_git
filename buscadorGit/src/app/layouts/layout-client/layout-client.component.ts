@@ -17,21 +17,14 @@ export class LayoutClientComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getSearchData();
+    /*     this.getSearchData(); */
   }
 
-  getSearchData() {
+  /* getSearchData() {
     this.searchData.searchData.subscribe((resp: any) => {
       if (resp) {
         this.getUsers(resp);
       }
     });
-  }
-
-  getUsers(data: any) {
-    this.apiGit.getUsers(data).subscribe((resp: any) => {
-      console.log(resp);
-      this.usersList = (resp as { items: UserProps[] })?.items;
-    });
-  }
+  } */
 }
