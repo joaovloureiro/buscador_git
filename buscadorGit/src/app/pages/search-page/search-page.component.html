@@ -12,17 +12,19 @@
           </div>
         </div>
 
-        <mat-paginator
-          #paginator
-          class="demo-paginator"
-          (page)="getUsers($event.pageIndex + 1)"
-          [length]="total"
-          [pageSize]="30"
-          [showFirstLastButtons]="false"
-          [hidePageSize]="true"
-          [pageIndex]="0"
-        >
-        </mat-paginator>
+        <div class="pb-3">
+          <mat-paginator
+            #paginator
+            class="demo-paginator"
+            (page)="getUsers($event.pageIndex + 1)"
+            [length]="total"
+            [pageSize]="30"
+            [showFirstLastButtons]="false"
+            [hidePageSize]="true"
+            [pageIndex]="0"
+          >
+          </mat-paginator>
+        </div>
       </ng-container>
 
       <ng-template #noData>

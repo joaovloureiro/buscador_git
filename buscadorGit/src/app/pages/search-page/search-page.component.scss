@@ -12,7 +12,7 @@
   background-size: cover;
   z-index: -1;
   position: fixed;
-  opacity: 0.15;
+  opacity: 0.1;
 }
 
 section {
@@ -27,7 +27,7 @@ section {
   h1 {
     font-weight: 500;
     font-size: 18px;
-    color: #2f2544;
+    color: #4f6c7c;
     margin-bottom: 0.625rem;
   }
 
@@ -38,4 +38,9 @@ section {
       margin-bottom: 1.25rem;
     }
   }
+}
+
+mat-paginator {
+  background-color: transparent;
+  color: #4f6c7c;
 }

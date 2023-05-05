@@ -16,6 +16,7 @@ export class SearchPageComponent implements OnInit {
   users!: CardProps[];
   total!: number;
   search!: string;
+  pageIndex: number = 1;
   unsubscribeQueryParams!: Subscription;
 
   constructor(
@@ -34,30 +35,32 @@ export class SearchPageComponent implements OnInit {
   getParams() {
     this.unsubscribeQueryParams = this.activatedRoute.queryParams.subscribe(
       (params) => {
+        if (params && params['page']) {
+          this.pageIndex = params['page'];
+          console.log(params['page']);
+        }
         if (params && params['q']) {
           this.searchData.setSearchData(params['q']);
-          this.unsubscribeQueryParams.unsubscribe();
+          console.log(params['q']);
         }
       }
     );
 
-    if (this.search) this.unsubscribeQueryParams.unsubscribe();
+    // if (this.search) this.unsubscribeQueryParams.unsubscribe();
   }
 
   getSearchData() {
     this.searchData.searchData.subscribe((data: string) => {
       if (data) (this.search = data), this.getUsers();
-      // else this.router.navigate(['/home']);
+      else this.router.navigate(['/home']);
     });
   }
 
-  getUsers(page: number = 1, data: string = this.search) {
-    this.setParams(data);
+  getUsers(page: number = this.pageIndex, data: string = this.search) {
+    this.setParams({ q: data, page: page });
 
     this.apiGit.getUsers(page, data).subscribe((resp: unknown) => {
       if (resp) {
-        console.log(resp);
-
         this.total = (resp as { total_count: number })?.total_count;
         this.users = (resp as { items: UserProps[] })?.items.map((user) => {
           return {
@@ -73,12 +76,14 @@ export class SearchPageComponent implements OnInit {
     });
   }
 
-  setParams(data: string = this.search) {
+  setParams(data = {}) {
     const urlTree = this.router.createUrlTree([], {
       relativeTo: this.activatedRoute,
-      queryParams: { q: data },
+      queryParams: data,
       queryParamsHandling: 'merge',
     });
+
+    console.log(urlTree);
 
     this.location.go(urlTree.toString());
   }
