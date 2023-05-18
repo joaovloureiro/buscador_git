@@ -33,8 +33,15 @@ section {
 
   .row {
     padding-top: 1.25rem;
+    align-items: stretch;
+    height: auto;
 
-    .col-2 {
+    .col-12,
+    .col-xl-2,
+    .col-lg-3,
+    .col-md-4,
+    .col-sm-6,
+    .col-12 {
       margin-bottom: 1.25rem;
     }
   }
