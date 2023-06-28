@@ -4,5 +4,10 @@
   left: 0;
   top: 0;
   padding: 40px;
-  border-radius: 10px;
+  // border-radius: 10px;
+  border-radius: 0;
+}
+
+.modal-panel-class .mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 10px !important;
 }

@@ -33,7 +33,10 @@ export class InfosModalComponent implements OnInit {
         followers: resp?.followers,
         following: resp?.following,
       };
-      console.log(resp);
     });
+  }
+
+  close() {
+    this.dialogRef.close();
   }
 }

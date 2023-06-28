@@ -1,11 +1,14 @@
 .card-container {
   display: flex;
   padding: 20px;
+  gap: 1.25rem;
+  border-radius: 10px;
 
   img {
     border-radius: 10px;
+    width: 266px;
     height: 266px;
-    width: auto;
+    object-fit: cover;
   }
 
   h2 {
@@ -26,7 +29,7 @@
   }
 
   .infos {
-    margin-left: 20px;
+    width: 100%;
 
     .line {
       border-bottom: 1px solid #e1dfe0;
@@ -42,6 +45,24 @@
       .col-6:last-child {
         text-align: right;
       }
+    }
+  }
+
+  button {
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--primary-0, #8c56c2);
+    color: var(--primary-0, #8c56c2);
+    text-align: center;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: transparent;
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: #8c56c24d;
     }
   }
 }
