@@ -1,6 +1,8 @@
 <div mat-dialog-content>
   <div class="card-container">
-    <img [src]="user?.avatar" [alt]="user?.name" />
+    <div class="img-container">
+      <img [src]="user?.avatar" [alt]="user?.name" />
+    </div>
 
     <div class="infos">
       <h2>{{ user?.name }}</h2>
