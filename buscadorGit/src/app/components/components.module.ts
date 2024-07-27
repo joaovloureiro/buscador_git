@@ -7,9 +7,15 @@ import { CardComponent } from './card/card.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 import { InfosModalComponent } from './infos-modal/infos-modal.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
-  declarations: [SearchComponent, CardComponent, InfosModalComponent],
+  declarations: [
+    SearchComponent,
+    CardComponent,
+    InfosModalComponent,
+    ButtonComponent,
+  ],
   imports: [
     CommonModule,
     MatSlideToggleModule,
@@ -25,6 +31,7 @@ import { InfosModalComponent } from './infos-modal/infos-modal.component';
     CardComponent,
     MatDialogModule,
     InfosModalComponent,
+    ButtonComponent,
   ],
 })
 export class ComponentsModule {}

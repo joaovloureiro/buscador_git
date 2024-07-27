@@ -1,0 +1,18 @@
+<ng-container *ngIf="href; else showButton">
+  <a
+    class="{{ cssClass }} {{ variant }}"
+    [href]="href"
+    [target]="isExternal ? '_blank' : ''"
+    >{{ title }}</a
+  >
+</ng-container>
+
+<ng-template #showButton>
+  <button
+    type="button"
+    (click)="emitEvent()"
+    class="{{ cssClass }} {{ variant }}"
+  >
+    {{ title }}
+  </button>
+</ng-template>

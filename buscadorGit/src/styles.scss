@@ -2,6 +2,12 @@
 @import "./assets/css/reset.scss";
 @import "./assets/css/modal.scss";
 
+:root {
+  --color-primary: #8c56c2;
+  --color-text-white: #ffff;
+  --color-white: #ffff;
+}
+
 html,
 body {
   height: 100%;
