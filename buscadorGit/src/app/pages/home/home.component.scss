@@ -1,11 +1,12 @@
-.home-container {
-  background-color: #e1dfe0;
-  height: 100%;
-  width: 100%;
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 
   img {
-    width: 100%;
+    object-fit: contain;
+    max-width: 72rem;
     height: auto;
-    max-width: 730px;
   }
 }

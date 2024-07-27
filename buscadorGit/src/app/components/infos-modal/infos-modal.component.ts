@@ -13,7 +13,7 @@ export class InfosModalComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<InfosModalComponent>,
     private apiGit: GitService,
-    @Inject(MAT_DIALOG_DATA) private data: string
+    @Inject(MAT_DIALOG_DATA) private data: string,
   ) {}
 
   ngOnInit(): void {
