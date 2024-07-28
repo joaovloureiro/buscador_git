@@ -3,10 +3,8 @@
   align-items: center;
   justify-content: center;
   flex: 1;
-
-  img {
-    object-fit: contain;
-    max-width: 72rem;
-    height: auto;
-  }
+  min-height: var(--main-min-height);
+  background-image: url("../../../assets/imgs/Logotype\ -\ Shadow.svg");
+  background-position: center;
+  background-repeat: no-repeat;
 }
