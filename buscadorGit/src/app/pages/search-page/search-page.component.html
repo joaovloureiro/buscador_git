@@ -1,50 +1,41 @@
-<div class="page-container">
-  <div class="img-container"></div>
-  <div class="h-100">
-    <section>
-      <div class="container">
-        <h1>Resultados para: {{ search }}</h1>
-        <div class="line"></div>
+<div class="page-container container">
+  <div>
+    <h3 class="mb-4">
+      Resultados para: <i>{{ search }}</i>
+    </h3>
 
-        <ng-container *ngIf="total > 0; else noData">
-          <div class="row">
-            <div
-              *ngFor="let user of users"
-              class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12"
-            >
-              <app-card [user]="user"></app-card>
-            </div>
+    <ng-container *ngIf="total > 0; else noData">
+      <div class="cards-list-container mb-4">
+        <ng-container *ngFor="let user of usersList">
+          <div class="card-container">
+            <app-card [user]="user"></app-card>
           </div>
         </ng-container>
       </div>
-
-      <div class="paginator-container">
-        <div class="paginator-background"></div>
-
-        <div class="container">
-          <mat-paginator
-            #paginator
-            class="demo-paginator"
-            (page)="getUsers($event.pageIndex + 1)"
-            [length]="total"
-            [pageSize]="30"
-            [showFirstLastButtons]="false"
-            [hidePageSize]="true"
-            [pageIndex]="0"
-          >
-          </mat-paginator>
-        </div>
-      </div>
-
-      <div class="container">
-        <ng-template #noData>
-          <div
-            class="d-flex h-100 w-100 justify-content-center align-items-center"
-          >
-            <h1>SEM RESULTADOS =(</h1>
-          </div>
-        </ng-template>
-      </div>
-    </section>
+    </ng-container>
   </div>
+
+  <div class="paginator-container">
+    <div class="paginator-background"></div>
+
+    <div class="container">
+      <mat-paginator
+        #paginator
+        class="demo-paginator"
+        (page)="getUsers($event.pageIndex + 1)"
+        [length]="total"
+        [pageSize]="30"
+        [showFirstLastButtons]="false"
+        [hidePageSize]="true"
+        [pageIndex]="0"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+
+  <ng-template #noData>
+    <div class="d-flex h-100 w-100 justify-content-center align-items-center">
+      <h1>SEM RESULTADOS =(</h1>
+    </div>
+  </ng-template>
 </div>

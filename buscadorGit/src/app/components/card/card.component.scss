@@ -1,8 +1,9 @@
 .user-card {
-  background: #ffffff;
+  background: var(--color-white);
   box-shadow: 0px 0px 6px rgba(47, 37, 68, 0.25);
   border-radius: 10px;
   height: 100%;
+  max-width: 300px;
 
   img {
     height: 130px;
