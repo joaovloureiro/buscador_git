@@ -3,9 +3,12 @@
   min-height: 200px;
   left: 0;
   top: 0;
-  padding: 40px;
-  // border-radius: 10px;
+  padding: 0;
   border-radius: 0;
+}
+
+.mdc-dialog .mdc-dialog__content {
+  padding: 2rem !important;
 }
 
 .modal-panel-class .mat-mdc-dialog-container .mdc-dialog__surface {

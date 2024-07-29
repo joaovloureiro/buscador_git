@@ -22,8 +22,6 @@ export class InfosModalComponent implements OnInit {
 
   getUser(user: string) {
     this.apiGit.getUser(user).subscribe((resp: any) => {
-      console.log(resp);
-
       this.user = {
         name: resp?.name || resp?.login,
         login: resp?.login,
