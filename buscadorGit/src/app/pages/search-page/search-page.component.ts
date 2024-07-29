@@ -16,7 +16,7 @@ export class SearchPageComponent implements OnInit {
   usersList!: CardProps[];
   total!: number;
   search!: string;
-  pageIndex: number = 1;
+  pageIndex: number = 0;
   unsubscribeQueryParams!: Subscription;
 
   constructor(
