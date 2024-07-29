@@ -66,9 +66,9 @@
   }
 }
 
-@media (max-width: 476px) {
+@media (max-width: 768px) {
   .user-card {
-    width: 200px;
-    align-self: center;
+    width: 100%;
+    min-width: 179px;
   }
 }
