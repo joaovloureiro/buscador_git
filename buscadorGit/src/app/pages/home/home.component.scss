@@ -1,11 +1,10 @@
-.home-container {
-  background-color: #e1dfe0;
-  height: 100%;
-  width: 100%;
-
-  img {
-    width: 100%;
-    height: auto;
-    max-width: 730px;
-  }
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: var(--main-min-height);
+  background-image: url("../../../assets/imgs/Logotype\ -\ Shadow.svg");
+  background-position: center;
+  background-repeat: no-repeat;
 }

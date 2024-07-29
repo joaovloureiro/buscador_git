@@ -13,7 +13,7 @@ import { UserProps } from 'src/app/types/user.type';
   styleUrls: ['./search-page.component.scss'],
 })
 export class SearchPageComponent implements OnInit {
-  users!: CardProps[];
+  usersList!: CardProps[];
   total!: number;
   search!: string;
   pageIndex: number = 1;
@@ -24,7 +24,7 @@ export class SearchPageComponent implements OnInit {
     private apiGit: GitService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private location: Location
+    private location: Location,
   ) {}
 
   ngOnInit(): void {
@@ -56,7 +56,7 @@ export class SearchPageComponent implements OnInit {
     this.apiGit.getUsers(page, data).subscribe((resp: unknown) => {
       if (resp) {
         this.total = (resp as { total_count: number })?.total_count;
-        this.users = (resp as { items: UserProps[] })?.items.map((user) => {
+        this.usersList = (resp as { items: UserProps[] })?.items.map((user) => {
           return {
             avatar: user.avatar_url,
             name: user?.login || 'Usuário',

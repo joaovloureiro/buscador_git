@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./assets/css/reset.scss";
+@import "./assets/css/modal.scss";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  --color-primary: #8c56c2;
+  --color-text-white: #ffff;
+  --color-white: #ffff;
+  --color-gray: #e1dfe0;
+  --header-height: 68px;
+  --footer-height: 40px;
+  --main-min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}

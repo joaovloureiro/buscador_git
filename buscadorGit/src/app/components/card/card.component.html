@@ -12,6 +12,11 @@
       <h6>{{ user.score }}</h6>
     </div>
 
-    <button>VER MAIS</button>
+    <app-button
+      (whenClick)="openModal(user.name)"
+      title="Ver mais"
+      type="button"
+      cssClass="w-100"
+    ></app-button>
   </div>
 </div>
