@@ -24,15 +24,17 @@
   .infos {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 0.25rem;
     height: 100%;
+    margin-bottom: 1rem;
 
     h3 {
       font-weight: 400;
       font-size: 18px;
       line-height: 21px;
       color: #2f2544;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0;
     }
 
     a {
