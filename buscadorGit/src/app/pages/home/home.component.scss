@@ -1,0 +1,16 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: var(--main-min-height);
+  background-image: url("../../../assets/imgs/Logotype\ -\ Shadow.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .home {
+    background-size: calc(100% - 4rem);
+  }
+}

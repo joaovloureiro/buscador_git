@@ -1,0 +1,46 @@
+.page-container {
+  width: 100%;
+  min-height: var(--main-min-height);
+  overflow: auto;
+  padding-top: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.cards-list-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  .card-container {
+    width: calc((100% - 8rem) / 5);
+  }
+}
+
+mat-paginator {
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+@media (max-width: 991px) {
+  .cards-list-container {
+    .card-container {
+      width: calc(((100% - 6rem) / 4));
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-list-container {
+    gap: 1rem;
+
+    .card-container {
+      width: calc(50% - 0.5rem);
+    }
+  }
+}

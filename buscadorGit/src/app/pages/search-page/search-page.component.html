@@ -1,0 +1,42 @@
+<div class="page-container container">
+  <div>
+    <h3 class="mb-4">
+      Resultados para: <i>{{ search }}</i>
+    </h3>
+
+    <ng-container *ngIf="total > 0; else noData">
+      <div class="cards-list-container">
+        <ng-container *ngFor="let user of usersList">
+          <div class="card-container">
+            <app-card [user]="user"></app-card>
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="paginator-container">
+    <div class="paginator-background"></div>
+
+    <div class="container">
+      <mat-paginator
+        #paginator
+        class="demo-paginator"
+        (page)="getUsers($event.pageIndex + 1)"
+        [length]="total"
+        [pageSize]="30"
+        [showFirstLastButtons]="false"
+        [hidePageSize]="true"
+        [pageIndex]="0"
+        [showFirstLastButtons]="true"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+
+  <ng-template #noData>
+    <div class="d-flex h-100 w-100 justify-content-center align-items-center">
+      <h1>SEM RESULTADOS =(</h1>
+    </div>
+  </ng-template>
+</div>

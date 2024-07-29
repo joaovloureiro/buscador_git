@@ -1,0 +1,64 @@
+<div mat-dialog-content>
+  <div class="card-container">
+    <div class="img-container">
+      <img [src]="user?.avatar" [alt]="user?.name" />
+    </div>
+
+    <div class="infos">
+      <h2>{{ user?.name }}</h2>
+
+      <div class="line"></div>
+
+      <div class="row">
+        <div class="col-6">
+          <p>
+            Username:<br />
+            <span class="anwser">{{ user?.login }}</span>
+          </p>
+        </div>
+        <div class="col-6">
+          <p>
+            Seguindo: <br /><span class="anwser">{{ user?.following }}</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <p>
+            Cadastrado(a): <br /><span class="anwser">{{
+              user?.created_at | date: "shortDate"
+            }}</span>
+          </p>
+        </div>
+        <div class="col-6">
+          <p>
+            Seguidores <br /><span class="anwser">{{ user?.followers }}</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <p>
+            URL: <br />
+            <a href="https://github.com/{{ user?.login }}" target="_blank">
+              https://github.com/{{ user?.login }}
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6">
+          <app-button
+            (whenClick)="close()"
+            title="Fechar"
+            variant="outline"
+          ></app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

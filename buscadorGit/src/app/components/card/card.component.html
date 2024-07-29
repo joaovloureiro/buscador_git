@@ -1,0 +1,20 @@
+<div class="user-card">
+  <img [src]="user.avatar" [alt]="user.name" />
+
+  <div class="text">
+    <div class="infos">
+      <h3>{{ user.name }}</h3>
+
+      <a href="https://github.com/{{ user.name }}" target="_blank"
+        >https://github.com/{{ user.name }}</a
+      >
+    </div>
+
+    <app-button
+      (whenClick)="openModal(user.name)"
+      title="Ver mais"
+      type="button"
+      cssClass="w-100"
+    ></app-button>
+  </div>
+</div>
