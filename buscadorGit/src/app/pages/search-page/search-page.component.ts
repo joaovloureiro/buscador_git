@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Subscription } from 'rxjs';
 import { CardProps } from 'src/app/components/card/card.component';
 import { GitService } from 'src/app/services/api/git.service';
@@ -16,7 +17,7 @@ export class SearchPageComponent implements OnInit {
   usersList!: CardProps[];
   total!: number;
   search!: string;
-  pageIndex: number = 1;
+  pageIndex: number = 0;
   unsubscribeQueryParams!: Subscription;
 
   constructor(
@@ -25,6 +26,7 @@ export class SearchPageComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private location: Location,
+    private spinner: NgxSpinnerService,
   ) {}
 
   ngOnInit(): void {
@@ -51,6 +53,7 @@ export class SearchPageComponent implements OnInit {
   }
 
   getUsers(page: number = this.pageIndex, data: string = this.search) {
+    this.spinner.show();
     this.setParams({ q: data, page: page });
 
     this.apiGit.getUsers(page, data).subscribe((resp: unknown) => {
@@ -64,6 +67,7 @@ export class SearchPageComponent implements OnInit {
           };
         });
       }
+      this.spinner.hide();
     });
   }
 

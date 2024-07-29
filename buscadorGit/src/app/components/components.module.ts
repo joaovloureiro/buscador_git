@@ -8,6 +8,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 import { InfosModalComponent } from './infos-modal/infos-modal.component';
 import { ButtonComponent } from './button/button.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ButtonComponent } from './button/button.component';
     ReactiveFormsModule,
     MatPaginatorModule,
     MatDialogModule,
+    NgxSpinnerModule,
   ],
   exports: [
     MatSlideToggleModule,

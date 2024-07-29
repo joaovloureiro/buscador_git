@@ -14,6 +14,10 @@ button {
   letter-spacing: none;
   transition: opacity 0.5s ease-in-out;
 
+  &.w-100 {
+    width: 100%;
+  }
+
   &:hover {
     opacity: 0.75;
   }
