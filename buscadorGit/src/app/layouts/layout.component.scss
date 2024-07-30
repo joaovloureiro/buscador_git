@@ -9,11 +9,11 @@ header {
   .header-container {
     display: flex;
     justify-content: flex-start;
-    gap: 2rem;
+    gap: 1.5rem;
+    align-items: center;
 
-    img {
-      height: 2rem;
-      width: auto;
+    .header-logo {
+      height: fit-content;
     }
 
     app-search {
